@@ -1,0 +1,26 @@
+<h1>Edit {{subject.name}}</h1>
+
+<form action="/subjects/{{subject._id}}?_method=PUT" method="post">
+    {{!-- name --}}
+    <div>
+        <label for="">name</label>
+        <input type="text" class="form-control" name="name" value="{{subject.name}}">
+    </div>
+    {{!-- code --}}
+    <div>
+        <label for="">code</label>
+        <input type="text" class="form-control" name="code" value="{{subject.code}}">
+    </div>
+    {{!-- department --}}
+    <div>
+        <label for="">Department</label>
+        <select name="department" id="" class="form-select">
+            {{#each departments}}
+                <option value="{{_id}}">{{name}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div>
+        <button class="btn btn-success" type="submit">save</button>
+    </div>
+</form>
